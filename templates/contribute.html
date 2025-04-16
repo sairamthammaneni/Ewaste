@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contribute Ewaste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Contribute Ewaste</h2>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+    <form method="POST">
+        <input type="number" step="0.01" name="ewaste_kg" placeholder="Enter kg of ewaste" required><br>
+        <button type="submit">Submit Contribution</button>
+    </form>
+    <a href="{{ url_for('dashboard') }}"><button class="back">Back to Dashboard</button></a>
+</div>
+</body>
+</html>

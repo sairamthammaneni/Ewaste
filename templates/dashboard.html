@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Ewaste</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Welcome, {{ user.email }}</h2>
+    <p><strong>Total Ewaste Given:</strong> {{ user.ewaste_given_kg }} kg</p>
+    <p><strong>Money Received:</strong> ₹{{ user.money_received }}</p>
+
+    <a href="{{ url_for('contribute') }}"><button>Contribute More</button></a>
+    <a href="{{ url_for('logout') }}"><button class="logout">Logout</button></a>
+</div>
+</body>
+</html>
